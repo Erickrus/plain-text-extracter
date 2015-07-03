@@ -1,0 +1,75 @@
+{
+   "name":"http://news.sina.com.cn",
+   "visitors":[
+      {
+         "name":"v0001",
+         "filters":[
+            {"nodeName":"h1",   "attributeName":"id",    "attributeValues":"artibodyTitle", "optional":false},
+            {"nodeName":"span", "attributeName":"class", "attributeValues":"time-source", "optional":true},
+            {"nodeName":"div",  "attributeName":"id",    "attributeValues":"artibody", "optional":false,
+               except:[
+                  {"nodeName":"div", "attributeName":"class", "attributeValues":"artical-player-wrap", "optional":false},
+                  {"nodeName":"div", "attributeName":"class", "attributeValues":"img_wrapper", "optional":false}
+               ]
+            }
+         ]
+      },
+      {
+         "name":"v0002",
+         "filters":[
+            {"nodeName":"h1",   "attributeName":"id",    "attributeValues":"artibodyTitle", "optional":false},
+            {"nodeName":"span", "attributeName":"id",    "attributeValues":"art_source", "optional":true},
+            {"nodeName":"span", "attributeName":"id",    "attributeValues":"pub_date", "optional":true},
+            {"nodeName":"span", "attributeName":"id",    "attributeValues":"media_name", "optional":true},
+            {"nodeName":"div",  "attributeName":"class", "attributeValues":"blkContainerSblkCon", "optional":false}
+         ]
+      },
+      {
+         "name":"v0003",
+         "filters":[
+            {"nodeName":"h1",   "attributeName":"class", "attributeValues":"fixTitle", "optional":false},
+            {"nodeName":"span", "attributeName":"class", "attributeValues":"time", "optional":false},
+            {"nodeName":"p",    "attributeName":"class", "attributeValues":"subTitleP", "optional":true},
+            {"nodeName":"div",  "attributeName":"class", "attributeValues":"mainContent", "optional":false}
+         ]
+      },
+      {
+         "name":"v0004",
+         "filters":[
+            {"nodeName":"h1",   "attributeName":"class", "attributeValues":"textBanner", "optional":false},
+            {"nodeName":"h2",   "attributeName":"class", "attributeValues":"w_title", "optional":true},
+            {"nodeName":"div",  "attributeName":"class", "attributeValues":"w_cont", "optional":true}
+         ]
+      },
+      {
+         "name":"v0005",
+         "filters":[
+            {"nodeName":"div",  "attributeName":"class", "attributeValues":"zg-content", "optional":false},
+            {"nodeName":"div",  "attributeName":"class", "attributeValues":"zg-content1 clearfix", "optional":false}
+         ]
+      },
+      {
+         "name":"v0006",
+         "filters":[
+            {"nodeName":"table",  "attributeName":"width", "attributeValues":"750", "optional":false,
+               after: {"nodeName":"#comment",  "attributeName":"", "attributeValues":"<!--开始：新闻内容-->", "optional":false},
+               before:{"nodeName":"#comment",  "attributeName":"", "attributeValues":"<!--结束：新闻内容-->", "optional":false},
+               except:[
+                  {"nodeName":"table",  "attributeName":"width", "attributeValues":"100%", "optional":false},
+                  {"nodeName":"p",      "attributeName":"class", "attributeValues":"title12", "optional":false}
+               ]
+            }
+         ]
+      },
+      {
+         "name":"v0007",
+         "filters":[
+            {"nodeName":"td",  "attributeName":"width", "attributeValues":"620", "optional":false,
+               under: {"nodeName":"table",  "attributeName":"width", "attributeValues":"750", "optional":false},
+               after: {"nodeName":"#comment",  "attributeName":"", "attributeValues":"<!-- body code end -->", "optional":false},
+               before:{"nodeName":"br",  "attributeName":"clear", "attributeValues":"all", "optional":false}
+            }
+         ]
+      }
+   ]
+}
